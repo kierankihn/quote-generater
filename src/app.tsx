@@ -3,7 +3,12 @@ import "@chatui/core/dist/index.css";
 import { sendMessage } from "./components/send.tsx";
 import Chat, { Bubble, MessageProps, useMessages } from '@chatui/core';
 
-
+/**
+ * Handles sending messages and updating the message display.
+ * 
+ * @param {void}
+ * @return {JSX.Element} the Chat component
+ */
 function App() {
 
     const { messages, appendMsg, setTyping } = useMessages([]);
@@ -28,6 +33,12 @@ function App() {
         }
     }
 
+    /**
+     * A function that renders the message content.
+     *
+     * @param {MessageProps} msg - the message object containing the content
+     * @return {JSX.Element} the Bubble component with the message content
+     */
     function renderMessageContent(msg: MessageProps) {
         const { content } = msg;
         return <Bubble content={content.text} />;
